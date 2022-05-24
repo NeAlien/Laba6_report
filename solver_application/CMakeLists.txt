@@ -24,18 +24,17 @@ set(CPACK_PACKAGE_VERSION_PATCH 0)
 option(GENERATOR "")
 
 if(${GENERATOR} MATCHES BINARY)
-	set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Sxeigumen")
-	install(TARGETS solver DESTINATION bin)
-	endif()
-	
-	if(${GENERATOR} MATCHES ARCHIVE)
-		install(FILES equation.cpp 
-		${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib/formatter.cpp
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Sxeigumen")
+install(TARGETS solver DESTINATION bin)
+endif()
+
+if(${GENERATOR} MATCHES ARCHIVE)
+install(FILES equation.cpp 
+                ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib/formatter.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib/formatter_ex.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib/solver.cpp
 		DESTINATION files)
-		install(TARGETS formatter_ex solver LIBRARY DESTINATION libraries)
-		endif()
-		
-		include(CPack)
-		
+install(TARGETS formatter_ex solver LIBRARY DESTINATION libraries)
+endif()
+
+include(CPack)
