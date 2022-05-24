@@ -146,4 +146,4 @@ jobs:
           upload_url: ${{ needs.Release.outputs.upload_url }}
           asset_path: ./build/solver-0.0.0-Darwin.dmg
           asset_name: solver_app.dmg
-          asset_content_type: files/dmg 
+          asset_content_type: files/dmg  
