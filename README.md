@@ -22,7 +22,6 @@ $ git config gpg.program gpg
 ```
 ### Создаём архив
 ```
-sh
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
 $ cmake --build _build --target package
 ```
